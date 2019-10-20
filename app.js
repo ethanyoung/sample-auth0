@@ -12,9 +12,7 @@ var authRouter = require('./routes/auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-if (app.get('env') === 'development') {
-  dotenv.config();
-}
+dotenv.config();
 
 // Configure Passport to use Auth0
 var strategy = new Auth0Strategy(
