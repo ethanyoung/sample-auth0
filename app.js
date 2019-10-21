@@ -59,10 +59,10 @@ var sess = {
   saveUninitialized: true
 };
 
-if (app.get('env') === 'production') {
-  app.set('trust proxy', 1);
-  sess.cookie.secure = true; // serve secure cookies, requires https
-}
+// if (app.get('env') === 'production') {
+//   app.set('trust proxy', 1);
+//   sess.cookie.secure = true; // serve secure cookies, requires https
+// }
 
 app.use(session(sess));
 
