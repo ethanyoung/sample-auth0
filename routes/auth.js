@@ -38,11 +38,11 @@ router.get('/logout', (req, res) => {
 
   var returnTo = req.protocol + '://' + req.hostname;
   var port = req.connection.localPort;
-  console.log(returnTo);
-  console.log(port);
-  // if (port !== undefined && port !== 80 && port !== 443) {
-  //   returnTo += ':' + port;
-  // }
+  console.log('returnTo: ', returnTo);
+  console.log('port: ', port);
+  if (req.hostname === 'localhost' && port !== undefined && port !== 80 && port !== 443) {
+    returnTo += ':' + port;
+  }
   var logoutURL = new url.URL(
     util.format('https://%s/logout', process.env.AUTH0_DOMAIN)
   );
