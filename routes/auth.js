@@ -38,8 +38,10 @@ router.get('/logout', (req, res) => {
 
   var returnTo = req.protocol + '://' + req.hostname;
   var port = req.connection.localPort;
+
   console.log('returnTo: ', returnTo);
   console.log('port: ', port);
+
   if (req.hostname === 'localhost' && port !== undefined && port !== 80 && port !== 443) {
     returnTo += ':' + port;
   }

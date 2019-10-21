@@ -59,6 +59,7 @@ var sess = {
   saveUninitialized: true
 };
 
+// This makes user fales in production, so comment out.
 // if (app.get('env') === 'production') {
 //   app.set('trust proxy', 1);
 //   sess.cookie.secure = true; // serve secure cookies, requires https
